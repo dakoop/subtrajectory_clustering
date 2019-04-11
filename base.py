@@ -27,6 +27,9 @@ class pt(object):
         """ Return string to be output while printing a pt object. """
         return "Point TrajID %d ; lat-long (%f,%f); time %f" % (self.trajID, self.lat, self.lon, self.t)
     
+    def __repr__(self):
+        """ Return string to be output while printing a pt object. """
+        return self.__str__()
 
 
 class traj(object):
@@ -95,6 +98,9 @@ class pathlet(object):
         """ Define a hash function so that pathlets can be used as keys in a dict. """
         return hash((self.trajID, self.bounds[0], self.bounds[1]))
         
+    def __repr__(self):
+        """ Return string to be output while printing a pt object. """
+        return self.__str__()
 
 
 class subTraj(object):
@@ -116,3 +122,6 @@ class subTraj(object):
     def __hash__(self):
         return hash((self.trajID, self.bounds[0], self.bounds[1]))
 
+    def __repr__(self):
+        """ Return string to be output while printing a pt object. """
+        return self.__str__()
