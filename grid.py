@@ -1,9 +1,4 @@
 import numpy as np
-import sys
-
-from base import *
-from distanceUtils import *
-
 
 class trajGrid:
     """ A class representing a simple grid to index trajectory points.

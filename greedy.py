@@ -1,7 +1,6 @@
 import sys
 import pickle as pickle
 
-from base import *
 from heapdict import heapdict
 
 

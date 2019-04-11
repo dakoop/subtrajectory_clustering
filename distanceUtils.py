@@ -1,6 +1,3 @@
-import sys
-
-from base import *
 from frechet import sqDist
 
 

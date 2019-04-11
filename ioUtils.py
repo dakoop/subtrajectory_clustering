@@ -1,4 +1,4 @@
-from base import *
+from base import traj
 
 def readTrajsFromTxtFile(fName):
     """ Read trajectory points from a text file.
@@ -23,10 +23,10 @@ def readTrajsFromTxtFile(fName):
         if "#" in line: continue
         line = line.replace("\n",";")
         linetokens = line.split(";")
-        trajID = int(linetokens[0]);        
-        t = float(linetokens[2]);
-        lat = float(linetokens[3]);
-        lon = float(linetokens[4]);
+        trajID = int(linetokens[0])
+        t = float(linetokens[2])
+        lat = float(linetokens[3])
+        lon = float(linetokens[4])
         if trajID not in trajs:
             trajs[trajID] = traj()
         trajs[trajID].addPt(lat, lon, trajID, t)

@@ -1,10 +1,8 @@
 # Python script to run all modules in one go, without generating intermediate files.
-import pickle as pickle
 
-from base import *
-from distance import *
-from greedy import *
-from ioUtils import *
+from distance import process
+from greedy import preprocessGreedy, runGreedy
+from ioUtils import readTrajsFromTxtFile
 
 if __name__ == "__main__":
     #if len(sys.argv) != 7:

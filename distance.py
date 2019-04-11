@@ -1,11 +1,11 @@
-import pickle as pickle
 import numpy as np
 import sys
+import pickle
 
-from base import *
-from distanceUtils import *
-from frechet import *
-from grid import *
+from base import subTraj, pathlet
+from distanceUtils import canonise, fSimplify, bSimplify
+from frechet import semiContFrechetDec
+from grid import gridData
 
 
 def inSquare(center, point, r):
