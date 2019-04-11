@@ -43,7 +43,7 @@ def fSimplify(uTraj, tau, start, end):
     sTraj.trajID = uTraj.pts[0].trajID
     sTraj.indices.append(start)
     curPoint = start
-    for i in xrange(start+1, end+1):
+    for i in range(start+1, end+1):
         if i == end:
             sTraj.indices.append(i)
             continue
@@ -75,7 +75,7 @@ def bSimplify(uTraj, tau, start, end):
     sTraj.trajID = uTraj.pts[0].trajID
     sTraj.indices.append(end)
     curPoint = end
-    for i in xrange(end-1, start-1, -1):
+    for i in range(end-1, start-1, -1):
         if i == start:
             sTraj.indices.append(i)
             continue
@@ -111,4 +111,4 @@ def canonise(i,j):
 
 # test canonise function
 if __name__ == "__main__":
-    print canonise(0, 16)
+    print(canonise(0, 16))

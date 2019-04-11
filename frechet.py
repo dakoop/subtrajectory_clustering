@@ -167,4 +167,4 @@ if __name__ == "__main__":
     #trajs = readTrajsFromTxtFile(sys.argv[1])
     k = list(trajs.keys())
     traj1, traj2 = trajs[k[0]], trajs[k[1]]
-    print semiContFrechetDec(traj1.pts, traj2.pts, Decimal(sys.argv[1]))
+    print(semiContFrechetDec(traj1.pts, traj2.pts, Decimal(sys.argv[1])))
