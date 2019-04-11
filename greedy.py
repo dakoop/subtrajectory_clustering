@@ -268,11 +268,12 @@ def computeOptStrajsAdvanced(pth, distPairs, pthOptStrajs, strajCov, c1, c3, m, 
         r, rmax = rmin, m*rmin
         while r <= rmax:
             for trID in affectedTrajs:
-                strajDists = distPairs[(pth, trID)]
-                (straj,dist) = optStrajAdvancedHelper(strajDists, strajCov, r, c3)
-                temp[trID] = (straj, dist)
-                if straj is not None:
-                    summation += (strajCov[straj] - c3*r*dist) # summation += cov - c3*r*d.
+                if (pth, trID) in distPairs: # DK make sure this exists in distPairs
+                    strajDists = distPairs[(pth, trID)]
+                    (straj,dist) = optStrajAdvancedHelper(strajDists, strajCov, r, c3)
+                    temp[trID] = (straj, dist)
+                    if straj is not None:
+                        summation += (strajCov[straj] - c3*r*dist) # summation += cov - c3*r*d.
                     
             if summation < c1*r:
                 break
