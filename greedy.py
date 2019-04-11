@@ -191,16 +191,19 @@ def computeCovCostRatio(trajStrajDist, c1, c3, strajCov):
             The coverage-cost ratio of the pathlet.
     """
     curCov, curCost = 0, c1
+    numCov = 0 # DK Added
     for k, v in trajStrajDist.items():
         straj, dist = v[0], v[1]
         if straj is None:
             continue
         curCov += strajCov[straj]
         curCost += 1.0*c3*dist
+        numCov += 1 # DK Added
     if curCov == 0:
         return 0
     else:
-        return (1.0*curCov)/(1.0*curCost)
+        return (1.0 * curCov * numCov * numCov) / (1.0 * curCost) # DK Add numCov
+        # return (1.0*curCov)/(1.0*curCost)
 
 
 def optStrajAdvancedHelper(strajDists, strajCov, r, c3):
